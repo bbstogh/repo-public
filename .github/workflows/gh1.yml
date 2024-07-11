@@ -1,0 +1,51 @@
+name: gh1
+on:
+  workflow_dispatch:
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: echo message
+      run: echo hello
+  Test:
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: echo message
+      run: echo test
+    - name: echo message
+      run: echo post
+      if: always()
+  Deploy:
+    runs-on: ubuntu-latest
+    needs: Test
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - name: sh
+      shell: bash
+      run: echo "Deploying the application..."
+  Post-Build:
+    if: always()
+    name: Post Build
+    runs-on: ubuntu-latest
+    needs:
+    - Build
+    - Test
+    - Deploy
+    steps:
+    - name: snapshot post build workflow status
+      run: |-
+        echo "success=${{ contains(needs.*.result,'success') && !contains(needs.*.result,'cancelled') && !contains(needs.*.result,'failure') }}" >> $GITHUB_OUTPUT
+        echo "failure=${{ contains(needs.*.result,'failure') && !contains(needs.*.result,'cancelled') }}" >> $GITHUB_OUTPUT
+      id: post_build
+    - name: echo message
+      run: echo Pipeline failed!
+      if: steps.post_build.outputs.failure == 'true'
+    - name: echo message
+      run: echo Pipeline succeeded!
+      if: steps.post_build.outputs.success == 'true'

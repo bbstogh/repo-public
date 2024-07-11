@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    // stages {
+    stages {
     //     stage('Checkout') {
     //         steps {
     //             // Get code from a GitHub repository
@@ -45,3 +45,4 @@ pipeline {
             echo 'Pipeline failed!'
         }
     }
+}

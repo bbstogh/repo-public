@@ -14,6 +14,7 @@ pipeline {
                 // Run the maven build
                 script {
                     echo "${params.everything}"
+                    echo everything
                 }
             }
         }

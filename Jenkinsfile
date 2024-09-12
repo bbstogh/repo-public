@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Run the maven build
-                echo 'hello'
+                println ("everything: ${everything}")
             }
         }
         

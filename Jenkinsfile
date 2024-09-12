@@ -20,7 +20,8 @@ pipeline {
                 // Run the maven build
                 script {
                     echo "print everything"
-                    echo "${params.everything}"
+                    #echo "${params.everything}"
+                    echo params.everything
                 }
             }
         }

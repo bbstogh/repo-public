@@ -1,3 +1,9 @@
+properties ([
+    parameters([
+        string(name: 'everything')
+    ])
+])
+
 pipeline {
     agent any
 
@@ -14,7 +20,6 @@ pipeline {
                 // Run the maven build
                 script {
                     echo "${params.everything}"
-                    echo everything
                 }
             }
         }

@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Run the maven build
                 script {
-                    echo ${everything}
+                    echo ${params.everything}
                 }
             }
         }

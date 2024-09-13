@@ -19,8 +19,8 @@ pipeline {
             steps {
                 // Run the maven build
                 script {
-                    echo "Branch: ${params.ref}"
-                    echo "Author: ${params.author}"
+                    echo "Branch: ${ref}"
+                    echo "Author: ${author}"
                     // echo "print everything"
                     // echo "${params.everything}"
                 }

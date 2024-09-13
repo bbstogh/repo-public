@@ -5,8 +5,7 @@ pipeline {
     GenericTrigger(
      genericVariables: [
        [key: 'name', value: '$actor.name'],
-       [key: 'reviewers', value: '$.pullRequest.reviewers'],
-       [key: 'ref', value: '$.ref']
+       [key: 'ref', value: '$']
     ],
     causeString: 'Triggered on $ref',
     token: 'test_token',

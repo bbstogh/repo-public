@@ -1,8 +1,8 @@
-properties ([
-    parameters([
-        string(name: 'everything')
-    ])
-])
+// properties ([
+//     parameters([
+//         string(name: 'everything')
+//     ])
+// ])
 
 pipeline {
     agent any

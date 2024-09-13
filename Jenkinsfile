@@ -4,8 +4,7 @@ pipeline {
   triggers {
     GenericTrigger(
      genericVariables: [
-       [key: 'name', value: '$actor.name'],
-       [key: 'ref', value: '$']
+       [key: 'name', value: '$actor.name']
     ],
     causeString: 'Triggered on $ref',
     token: 'test_token',
@@ -18,9 +17,7 @@ pipeline {
   stages {
     stage('Preparing') {
       steps {
-        sh "echo Ref: $ref"
         sh "echo Name: $name"
-        sh "echo Reviewers: $reviewers"
       }
     }
   }

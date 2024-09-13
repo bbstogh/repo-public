@@ -12,10 +12,7 @@ pipeline {
     token: 'test_token',
     tokenCredentialId: '',
     printContributedVariables: true,
-    printPostContent: true,
-    silentResponse: false,
-    regexpFilterText: '$ref',
-    regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
+    printPostContent: true
     )
   }
 

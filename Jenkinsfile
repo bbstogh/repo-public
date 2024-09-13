@@ -26,3 +26,6 @@ pipeline {
         sh "echo Name: $name"
         sh "echo Reviewers: $reviewers"
       }
+    }
+  }
+}

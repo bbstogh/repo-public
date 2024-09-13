@@ -6,9 +6,6 @@ pipeline {
      genericVariables: [
        [key: 'name', value: '$actor.name']
     ],
-    causeString: 'Triggered on $ref',
-    token: 'test_token',
-    tokenCredentialId: '',
     printContributedVariables: true,
     printPostContent: true
     )

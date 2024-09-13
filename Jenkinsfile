@@ -21,8 +21,6 @@ pipeline {
                 script {
                     echo "Branch: ${ref}"
                     echo "Author: ${author}"
-                    // echo "print everything"
-                    // echo "${params.everything}"
                 }
             }
         }

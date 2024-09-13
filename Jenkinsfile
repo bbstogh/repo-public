@@ -23,7 +23,6 @@ pipeline {
                     echo "Author: ${params.author}"
                     // echo "print everything"
                     // echo "${params.everything}"
-                    // echo params.everything
                 }
             }
         }

@@ -6,7 +6,11 @@
 
 pipeline {
     agent any
-
+            parameters {
+                string(name: 'P_REF'),
+                    string(name: 'P_AUTHOR')
+                
+            }
     stages {
     //     stage('Checkout') {
     //         steps {

@@ -11,6 +11,7 @@ pipeline {
                 script {
                     echo "Branch reference: ${params.ref}"
                     echo "Branch reference: ${params.P_REF}"
+                    echo "Branch reference: ${params.P_AUTHOR}"
                 }
             }
         }

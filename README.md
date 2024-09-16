@@ -2,4 +2,4 @@
 
 # hello trigger org folder 
 
-# auto trigger  p1 p2
+# auto trigger  p1 p2 p3
